@@ -36,13 +36,43 @@
                             <div>
                                 <label for="file-upload" class="block text-lg font-medium text-gray-700">Images</label>
                                 <div class="mt-3">
-                                    <input id="file-upload" class="border-solid border-2 border-sky-500 rounded-md p-1.5" name="file-upload" type="file">
+                                    <input id="file-upload"
+                                        class="border-solid border-2 border-sky-500 rounded-md p-1.5" name="file-upload"
+                                        type="file">
                                 </div>
+                            </div>
+
+                            <div>
+                                @for ($i = 0; $i < 3; $i++)
+                                    <div class="mt-1">
+                                        <div class="mb-2.5 flex items-center">
+                                            <button class="mr-2.5 shrink-0">
+                                                <svg class="animate-spin -ml-1 mr-3 h-5 w-5"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle class="opacity-25" cx="12" cy="12" r="10"
+                                                        stroke="currentColor" stroke-width="4"></circle>
+                                                    <path class="opacity-75" fill="currentColor"
+                                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                                    </path>
+                                                </svg>
+                                            </button>
+
+                                            <img class="mr-2.5 shrink-0" src="https://via.placeholder.com/50x50" alt="">
+
+                                            <div class="flex items-center w-full">
+                                                <p class="text-base">
+                                                    title-of-image-.jpg
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endfor
                             </div>
                         </div>
                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                             <button type="submit"
-                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Upload Images</button>
+                                class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Upload
+                                Images</button>
                         </div>
                     </div>
                 </form>
