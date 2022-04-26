@@ -26,8 +26,7 @@
             <div class="md:col-span-1">
                 <div class="px-4 sm:px-0">
                     <h2 class="text-2xl font-medium leading-6 text-gray-900">Multi-Image Uploader</h2>
-                    <p class="mt-5 text-lg text-gray-600">This information will be displayed publicly so be careful what
-                        you share.</p>
+                    <p class="mt-5 text-lg text-gray-600">Select some images and watch them upload with Axios.</p>
                 </div>
             </div>
             <div class="mt-5 md:mt-0 md:col-span-2">
@@ -37,9 +36,6 @@
                             <x-forms.fields.image label="Images" id="gallery-uploader" name="gallery" />
 
                             <div class="upload-previews"></div>
-                        </div>
-                        <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                            <x-forms.button text="Submit" />
                         </div>
                     </div>
                 </form>
