@@ -17,6 +17,7 @@
     </style>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="{{ mix('js/app.js') }}"></script>
 </head>
 
 <body class="antialiased bg-gray-200">
