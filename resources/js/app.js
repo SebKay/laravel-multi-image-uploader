@@ -1,4 +1,4 @@
-const { default: axios } = require("axios");
+import axios from "axios";
 
 const svgs = {
     inProgress: `
@@ -24,7 +24,7 @@ const svgs = {
  *
  * @returns {String}
  */
-function templateFileInProgress(file, image, index, status = 'inProgress') {
+function filePreviewTemplate(file, image, index, status = 'inProgress') {
     let icon = svgs[status] ?? '';
     let cssClasses = '';
 
@@ -66,21 +66,17 @@ function uploadImages(files) {
         let previewsElement = document.querySelector('.upload-previews');
         let image = URL.createObjectURL(file);
 
-        if (previewsElement) {
-            previewsElement.innerHTML += templateFileInProgress(file, image, i, 'inProgress');
-        }
+        previewsElement.innerHTML += filePreviewTemplate(file, image, i, 'inProgress');
 
         let formData = new FormData();
         formData.append('image', file);
 
         axios.post('/gallery-upload', formData)
             .then(response => {
-                previewsElement.querySelector(`[data-upload-preview="${i}"]`).innerHTML = templateFileInProgress(file, image, i, 'done');
+                previewsElement.querySelector(`[data-upload-preview="${i}"]`).innerHTML = filePreviewTemplate(file, image, i, 'done');
             })
-            .catch((error) => {
-                console.error(error);
-
-                previewsElement.querySelector(`[data-upload-preview="${i}"]`).innerHTML = templateFileInProgress(file, image, i, 'error');
+            .catch(error => {
+                previewsElement.querySelector(`[data-upload-preview="${i}"]`).innerHTML = filePreviewTemplate(file, image, i, 'error');
             });
     }
 }
