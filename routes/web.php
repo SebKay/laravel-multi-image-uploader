@@ -22,7 +22,12 @@ Route::get('', function () {
 
 Route::post('gallery-upload', function (Request $request) {
     $validated = $request->validate([
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'image' => [
+            'required',
+            'image',
+            'mimes:jpg,jpeg,png,gif',
+            'max:2048',
+        ],
     ]);
 
     Storage::disk('public')->put('/uploads', $validated['image']);

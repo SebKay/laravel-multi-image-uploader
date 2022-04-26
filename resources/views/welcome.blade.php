@@ -36,12 +36,7 @@
                         <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                             <x-forms.fields.image label="Images" id="gallery-uploader" name="gallery" />
 
-                            <div>
-                                @for ($i = 0; $i < 3; $i++)
-                                    <x-forms.image-upload-preview type="inProgress" :index="$i" />
-                                    <x-forms.image-upload-preview type="done" :index="$i" />
-                                @endfor
-                            </div>
+                            <div class="upload-previews"></div>
                         </div>
                         <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                             <x-forms.button text="Submit" />
