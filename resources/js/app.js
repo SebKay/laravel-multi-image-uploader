@@ -55,6 +55,9 @@ function filePreviewTemplate(file, image, index, status = 'inProgress') {
     `;
 }
 
+/**
+ * @param {File[]} files
+ */
 function uploadImages(files) {
     if (!files.length) {
         return;
